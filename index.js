@@ -112,7 +112,7 @@ app.put('/users/admin', verifycationToken, async (req,res)=>{
 //get user email booking
 app.get('/appointments', verifycationToken, async(req, res)=>{
   const email= req.query.email;
-  const date=new Date(req.query.date).toLocaleDateString();
+  const date=new req.query.date;
   const query= {email: email, date:date};
   const cursor = await databaseCollection.find(query).toArray();
   console.log(cursor);
