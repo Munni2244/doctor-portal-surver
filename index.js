@@ -109,7 +109,7 @@ app.put('/users/admin', verifycationToken, async (req,res)=>{
   }
 })
 
-//get user email booking
+//get users email booking
 app.get('/appointments', verifycationToken, async(req, res)=>{
   const email= req.query.email;
   const date=new req.query.date;
@@ -130,7 +130,7 @@ app.get('/appointments', verifycationToken, async(req, res)=>{
 
 
   app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello doctor World!')
   })
 
   app.listen(port, () => {
