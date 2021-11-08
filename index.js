@@ -112,7 +112,7 @@ app.put('/users/admin', verifycationToken, async (req,res)=>{
 //get users email booking
 app.get('/appointments', verifycationToken, async(req, res)=>{
   const email= req.query.email;
-  const date= req.query.date;
+  const date=req.query.date;
   const query= {email: email, date:date};
   const cursor = await databaseCollection.find(query).toArray();
   console.log(cursor);
@@ -130,7 +130,7 @@ app.get('/appointments', verifycationToken, async(req, res)=>{
 
 
   app.get('/', (req, res) => {
-    res.send('Hello doctor World!')
+    res.send('Hello doctors  World!')
   })
 
   app.listen(port, () => {
